@@ -1,31 +1,31 @@
 pipeline {
     agent any
 
-    tools { nodejs "node"}
+    tools {nodejs "node"}
 
     stages {
-        stage('Cypress parallel Test Suite') {
+        stage('Cypress Parallel Test Suite') {
             parallel {
                 stage('Slave Node1') {
-                    agent{
+                    agent {
                         label "remote_node1"
                     }
                     steps {
-                        git url:'https://github.com/markogavrilovic032/cypress-automation-framework.git'
+                        git url: 'https://github.com/markogavrilovic032/cypress-automation-framework.git'
                         bat 'npm install'
                         bat 'npm update'
-                        bat 'npm run trrrigerAllTests-autostore-dashboard'
+                        bat 'npm run triggerAllTests-autostore-dashboard'
                     }
                 }
                 stage('Slave Node2') {
-                    agent{
+                    agent {
                         label "remote_node2"
                     }
                     steps {
-                        git url:'https://github.com/markogavrilovic032/cypress-automation-framework.git'
+                        git url: 'https://github.com/markogavrilovic032/cypress-automation-framework.git'
                         bat 'npm install'
                         bat 'npm update'
-                        bat 'npm run trrrigerAllTests-autostore-dashboard'
+                        bat 'npm run triggerAllTests-autostore-dashboard'
                     }
                 }
             }
