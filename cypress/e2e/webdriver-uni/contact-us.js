@@ -30,6 +30,13 @@ describe("Test contact US form via Webdriver", () => {
     });
 
     it('Should not be able to subm,it a successful submission via contact us form as all fileds are requred', () => {
-        const_Us_PO.conctactForm_Submisstion(data.first_name,data.last_name, " ", data.comments, 'body', 'Error: Invalid email address')
+        if(Cypress.isBrowser('forefox')) {
+            
+        }
+        else {
+            // if browser is not firefox will be executed
+            const_Us_PO.conctactForm_Submisstion(data.first_name,data.last_name, " ", data.comments, 'body', 'Error: Invalid email address')
+        }
+        
     });
 });

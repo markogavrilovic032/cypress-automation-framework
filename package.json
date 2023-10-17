@@ -10,14 +10,15 @@
     "trriggerAllTests-dasboard": "npx cypress run --record --key dff68e9f-57bd-4f31-8e67-eff788bbe782",
     "trriggerAllTests-webdriver": "npx cypress run --spec 'cypress\\e2e\\webdriver-uni\\*'",
     "trrrigerAllTests-autostore-dashboard": "npx cypress run --spec 'cypress\\e2e\\automation-test-store\\*' --record --key dff68e9f-57bd-4f31-8e67-eff788bbe782",
-    "toTestStore": "npx cypress run --spec 'cypress\\e2e\\automation-test-store\\*'",
+    "trrrigerAllTests-autostore": "npx cypress run --spec 'cypress\\e2e\\automation-test-store\\*'",
     "junit-merge": "npx junit-merge -d cypress\\results\\junit -o cypress\\results\\junit\\results.xml",
     "delete-junit-report": "del cypress\\results\\junit\\results.xml",
     "delete-results": "rimraf cypress\\results\\*",
     "mochawesome-merge": "npx mochawesome-merge cypress\\results\\mochawesome\\*.json > mochawesome.json && npx marge mochawesome.json",
     "detete-mochawesome-report": "rimraf  mochawesome-report\\*",
     "cypress-webdriver-pack": "npm run delete-results && npm run detete-mochawesome-report && npm run trriggerAllTests-webdriver && npm run mochawesome-merge",
-    "cypress-regression-pack": "npm run delete-results && npm run detete-mochawesome-report && npm run triggerAllTests-headless && npm run mochawesome-merge"
+    "cypress-regression-pack": "npm run delete-results && npm run detete-mochawesome-report && npm run triggerAllTests-headless && npm run mochawesome-merge",
+    "cypress-multi-browser": "npm run trrrigerAllTests-autostore -- --browser electron --headed & npm run trrrigerAllTests-autostore -- --browser edge --headed"
   },
   "author": "Marko Gavrilovic",
   "license": "ISC",
