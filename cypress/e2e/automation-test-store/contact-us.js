@@ -15,7 +15,7 @@ describe('Test contact US form via Automation test store', () => {
         }
     }, () => {
         cy.visit("https://www.automationteststore.com/")
-        cy.get("a[href$='contact']555").should('be.visible').click().then(function(linkText){
+        cy.get("a[href$='contact']").should('be.visible').click().then(function(linkText){
             cy.log("Clicked on link using text: " + linkText.text())
             cy.log("11111111111111111111111111111111111111111111111111111111111111111")
         })
